@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 
-#include "../includes/push_swap.h"
+#include "../../../includes/push_swap.h"
 
 int	find_pivot1(t_list *stack, int size)
 {

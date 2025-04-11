@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 static void	send_min_to_b(t_list **stack_a, t_list *stack_b)
 {
@@ -23,6 +23,15 @@ static void	send_min_to_b(t_list **stack_a, t_list *stack_b)
 	{
 		current_node = &((*current_node))->next_node;
 		if (*current_node)
+		{
+			if ((*current_node)->next_node == smallest_node)
+			{
+				smallest_node->next_node = (*current_node)->next_node;
+				(*current_node)->next_node = NULL;
+				break ;
+			}
+		}
+		else
 		{
 			*current_node = (*current_node)->next_node;
 			smallest_node->next_node = NULL;

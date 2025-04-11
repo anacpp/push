@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 int    count_nodes(t_list *stack)
 {
@@ -41,14 +41,14 @@ t_list  *find_smallest_node (t_list *stack)
     }
 }
 
-int stack_is_ordenated(t_list   *stack)
+int	is_sorted(t_list *stack)
 {
-    while (stack)
-    {
-        if ((stack->number) > stack->next_node->number)
-            return (1);
-        else
-            stack = stack->next_node;
-    }
-    return (0);
+	while (stack && stack->next_node)
+	{
+		if (stack->number > stack->next_node->number)
+			return (0);
+		stack = stack->next_node;
+	}
+	return (1);
 }
+

@@ -18,12 +18,13 @@
 # include <stdlib.h>
 # include <ctype.h>
 # include <string.h>
+# include <stddef.h>
 
-typedef struct s_list
+typedef struct s_stack
 {
 	void				*content;
 	struct s_list		*next;
-}	t_list;
+}	t_stack;
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);

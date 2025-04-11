@@ -10,9 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	ft_two_sort(t_list **stack)
 {
-	ft_swap_a(stack);
+	if (is_sorted(*stack))
+		return ;
+	else
+		ft_swap_a(stack);
 }

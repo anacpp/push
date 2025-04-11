@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 static int	is_number(const char *str)
 {
@@ -80,6 +80,7 @@ static void	process_arg(char *arg, t_list **stack)
 	}
 	free_split(split_args);
 }
+
 t_list	*parse_arguments(int argc, char **argv)
 {
 	t_list	*stack;

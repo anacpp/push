@@ -13,7 +13,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -28,9 +28,12 @@ typedef struct s_list
 
 // auxiliar operations
 int					count_nodes(t_list *stack);
-int					stack_is_ordenated(t_list *stack);
+int					is_sorted(t_list *stack);
 t_list				*find_smallest_node(t_list *stack);
 void				free_split(char **split);
+void				free_stack(t_list *stack);
+void				handle_error(t_list *stack, char *msg, int code);
+t_list				*new_node(int value);
 
 // algorithm functions
 int					ft_sort_five(t_list **stack_a, t_list **stack_b);
@@ -41,9 +44,13 @@ int					find_pivot2(t_list *stack, int size);
 int					*stack_to_array(t_list *stack, int size);
 void				quick_sort(int *arr, int low, int high);
 int					partition(int *arr, int low, int high);
+void				partition_and_move(t_list **stack_a, t_list **stack_b);
 
 // parce functions
 t_list				*parse_arguments(int argc, char **argv);
+
+//main functions
+void				push_swap(t_list **stack_a, t_list **stack_b);
 
 // basic operations
 int					ft_swap_a(t_list **stack_a);

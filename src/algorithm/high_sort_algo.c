@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	move_to_b_optimized(t_list **stack_a, t_list **stack_b, int pivot1,
 		int pivot2)
