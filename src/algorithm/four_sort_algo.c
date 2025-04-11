@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   two_algo.c                                         :+:      :+:    :+:   */
+/*   four_sort_algo.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 18:54:26 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/04/11 16:30:04 by acesar-p         ###   ########.fr       */
+/*   Created: 2025/03/29 12:00:00 by user              #+#    #+#             */
+/*   Updated: 2025/04/11 19:06:47 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_two_sort(t_list **stack)
+int	ft_sort_four(t_list **stack_a, t_list **stack_b)
 {
-	if (is_sorted(stack))
-		return ;
-	else
-		ft_swap_a(stack);
+	t_list *smallest;
+
+	smallest = find_smallest_node(stack_a);
+	send_min_to_b(stack_a, stack_b); 
+	ft_push_a(stack_a, stack_b);
+	return (0);
 }

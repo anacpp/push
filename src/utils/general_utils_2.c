@@ -6,7 +6,7 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:54:26 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/04/03 16:29:57 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/11 16:43:03 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,32 @@ int    count_nodes(t_list *stack)
     return (counter);
 }
 
-t_list  *find_smallest_node (t_list *stack)
+t_list  *find_smallest_node(t_list **stack)
 {
     t_list *min_node;
+    t_list *current;
 
-    min_node = stack;
-    while (stack)
+    if (!stack || !(*stack))
+        return (NULL);
+    min_node = *stack;
+    current = *stack;
+    while (current)
     {
-        if (stack->number < min_node->number)
-        {
-            min_node = stack;
-            stack = stack->next_node;
-        }
-        return (min_node);
+        if (current->number < min_node->number)
+            min_node = current;
+        current = current->next_node;
     }
+    return (min_node);
 }
 
-int	is_sorted(t_list *stack)
+
+int	is_sorted(t_list **stack)
 {
-	while (stack && stack->next_node)
+	while (stack && (*stack)->next_node)
 	{
-		if (stack->number > stack->next_node->number)
+		if ((*stack)->number > (*stack)->next_node->number)
 			return (0);
-		stack = stack->next_node;
+		stack = &(*stack)->next_node;
 	}
 	return (1);
 }

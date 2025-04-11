@@ -6,11 +6,22 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 16:55:33 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/04/03 17:03:31 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/11 19:14:48 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void print_stack(t_list *stack, char *name)
+{
+	printf("%s: ", name);
+	while (stack)
+	{
+		printf("%d ", stack->number);
+		stack = stack->next_node;
+	}
+	printf("\n");
+}
 
 int	main(int argc, char **argv)
 {
@@ -21,15 +32,20 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc < 2)
 		return (0);
-	parse_arguments(argv, &stack_a);
-	if (is_sorted(stack_a))
+	stack_a = parse_arguments(argc, argv);
+	if (!stack_a)
+		return (write(2, "Error\n", 6), 1); 
+	if (is_sorted(&stack_a))
 	{
-		free_stack(&stack_a);
+		free_stack(stack_a);
 		return (0);
 	}
 	push_swap(&stack_a, &stack_b);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
+	print_stack(stack_a, "A");
+	print_stack(stack_b, "B");
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }
+
 

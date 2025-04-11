@@ -6,7 +6,7 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:54:26 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/04/03 16:31:09 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/11 18:48:57 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,13 @@ static void	ft_rotate(t_list **stack)
 	t_list	*first_node;
 	t_list	*current_node;
 
-	if (!stack || !*stack)
+	if (!stack || !*stack || !(*stack)->next_node)
 		return ;
 	first_node = *stack;
 	current_node = *stack;
 	*stack = (*stack)->next_node;
 	while (current_node->next_node)
-	{
 		current_node = current_node->next_node;
-	}
 	current_node->next_node = first_node;
 	first_node->next_node = NULL;
 }

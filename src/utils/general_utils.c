@@ -6,7 +6,7 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:54:26 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/04/03 16:30:33 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/11 16:57:26 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	free_stack(t_list *stack)
 	}
 }
 
-int	stack_size(t_list *stack)
+int	ft_stack_size(t_list *stack)
 {
 	int size;
 

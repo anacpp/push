@@ -6,7 +6,7 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:54:26 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/04/03 16:29:51 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/11 16:36:54 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,7 @@ int	*stack_to_array(t_list *stack, int size)
 void	quick_sort(int *arr, int low, int high)
 {
 	int	pivot;
-	int	i;
-	int	j;
-	int	temp;
-
+	
 	if (low < high)
 	{
 		pivot = partition(arr, low, high);
