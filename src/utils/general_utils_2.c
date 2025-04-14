@@ -43,7 +43,6 @@ t_list  *find_smallest_node(t_list **stack)
     return (min_node);
 }
 
-
 int	is_sorted(t_list **stack)
 {
 	while (stack && (*stack)->next_node)

@@ -13,23 +13,6 @@
 
 #include "../../../includes/push_swap.h"
 
-int	*stack_to_array(t_list *stack, int size)
-{
-	int	*arr;
-	int	i;
-
-	arr = (int *)malloc(sizeof(int) * size);
-	if (!arr)
-		return (NULL);
-	i = 0;
-	while (stack)
-	{
-		arr[i++] = stack->number;
-		stack = stack->next_node;
-	}
-	return (arr);
-}
-
 void index_stack(t_list *stack)
 {
 	t_list *current;

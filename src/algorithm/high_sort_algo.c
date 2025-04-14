@@ -56,9 +56,7 @@ static void push_chunk_elements(t_list **a, t_list **b, int chunk_min, int chunk
                 ft_rotate_b(b);
         }
         else
-        {
-            ft_rotate_a(a);
-        }
+			ft_rotate_a(a);
         i++;
     }
 }
