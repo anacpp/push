@@ -35,6 +35,8 @@ int	main(int argc, char **argv)
 	stack_a = parse_arguments(argc, argv);
 	index_stack(stack_a);
 	push_swap(&stack_a, &stack_b);
+	print_stack(stack_a, "Stack A");
+	print_stack(stack_b, "Stack B");
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

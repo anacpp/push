@@ -71,4 +71,6 @@ int					ft_three_sort_algo(t_list **stack);
 
 
 void print_stack(t_list *stack, char *name);
+void	return_chunks(t_list **a, t_list **b);
+void	push_chunks(t_list **a, t_list **b, int size, int chunks);
 #endif

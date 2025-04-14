@@ -28,5 +28,8 @@ void	push_swap(t_list **stack_a, t_list **stack_b)
 	else if (size == 5)
 		ft_sort_five(stack_a, stack_b);
 	else if (size > 5)
-		radix(stack_a, stack_b, size);
+	{
+		push_chunks(stack_a, stack_b, size, 5);
+		return_chunks(stack_a, stack_b);
+	}
 }
