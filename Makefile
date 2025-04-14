@@ -22,7 +22,7 @@ SRC = src/basic_operations/ft_reverse_rotate.c src/basic_operations/ft_rotate.c 
 		src/algorithm/five_sort_algo.c src/algorithm/high_sort_algo.c src/algorithm/three_sort_algo.c src/algorithm/two_algo.c \
 		src/parce_functions/parce_func.c src/utils/parce_utils/utils.c src/utils/sorting_utils/sort_utils_2.c \
 		src/utils/sorting_utils/sort_utils.c src/utils/general_utils_2.c src/utils/general_utils.c src/main.c \
-		src/push_swap.c src/algorithm/four_sort_algo.c 
+		src/push_swap.c 
 
 OBJ = $(SRC:.c=.o)
 DIRS = $(sort $(dir $(OBJ)))

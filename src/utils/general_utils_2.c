@@ -31,7 +31,7 @@ t_list  *find_smallest_node(t_list **stack)
     t_list *current;
 
     if (!stack || !(*stack))
-        return (NULL);
+        handle_error(*stack, "Error.\n", 1); 
     min_node = *stack;
     current = *stack;
     while (current)

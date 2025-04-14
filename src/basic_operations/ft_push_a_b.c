@@ -27,14 +27,14 @@ static void	push_node(t_list **stack_a, t_list **stack_b)
 
 int	ft_push_a(t_list **stack_a, t_list **stack_b)
 {
-	push_node(stack_a, stack_b);
+	push_node(stack_b, stack_a);
 	write(1, "pa\n", 3);
 	return (1);
 }
 
 int	ft_push_b(t_list **stack_a, t_list **stack_b)
 {
-	push_node(stack_b, stack_a);
+	push_node(stack_a, stack_b);
 	write(1, "pb\n", 3);
 	return (1);
 }

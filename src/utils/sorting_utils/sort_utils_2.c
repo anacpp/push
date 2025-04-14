@@ -42,3 +42,5 @@ int	find_position(t_list *stack, int index)
 	}
 	return (-1);
 }
+
+

@@ -12,33 +12,33 @@
 
 #include "../../includes/push_swap.h"
 
-int	ft_three_sort_algo(t_list **stack)
+int ft_three_sort_algo(t_list **stack)
 {
-	int first;
-	int middle;
-	int last;
-	int i;
+    int first;
+    int middle;
+    int last;
+    int i;
 
-	first = (*stack)->number;
-	middle = (*stack)->next_node->number;
-	last = (*stack)->next_node->next_node->number;
-	i = 0;
-	if (first > middle && middle < last && last > first)
-		i += ft_swap_a(stack);
-	if (first > middle && middle > last && last < first)
-	{
-		i += ft_swap_a(stack);
-		i += ft_rev_rotate_a(stack);
-	}
-	if (first > middle && middle < last && last < first)
-		i += ft_rotate_a(stack);
-	if (first < middle && middle > last && last > first)
-	{
-		i += ft_swap_a(stack);
-		i += ft_rotate_a(stack);
-		return (i);
-	}
-	if (first < middle && middle > last && last < first)
-		i += ft_rev_rotate_a(stack);
-	return (i);
+    first = (*stack)->number;
+    middle = (*stack)->next_node->number;
+    last = (*stack)->next_node->next_node->number;
+    i = 0;
+    if (first > middle && middle < last && last > first)
+        i += ft_swap_a(stack); 
+    if (first > middle && middle > last && last < first)
+    {
+        i += ft_swap_a(stack);         
+        i += ft_rev_rotate_a(stack); 
+    }
+    if (first > middle && middle < last && last < first)
+        i += ft_rotate_a(stack); 
+     if (first < middle && middle > last && last > first)
+    {
+        i += ft_swap_a(stack);   
+        i += ft_rotate_a(stack);
+	} 
+    if (first < middle && middle > last && last < first)
+        i += ft_rev_rotate_a(stack); 
+    return i;
 }
+

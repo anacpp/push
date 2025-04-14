@@ -12,66 +12,34 @@
 
 #include "../../includes/push_swap.h"
 
-void	move_to_b_optimized(t_list **stack_a, t_list **stack_b, int pivot1, int pivot2)
-{
-	int	size;
-	int	i;
 
-	size = ft_stack_size(*stack_a);
-	i = 0;
-	while (i < size)
-	{
-		if ((*stack_a)->number < pivot1)
-		{
-			ft_push_b(stack_a, stack_b);
-			ft_rotate_b(stack_b);
-		}
-		else if ((*stack_a)->number < pivot2)
-		{
-			ft_push_b(stack_a, stack_b);
-		}
-		else
-		{
-			ft_rotate_a(stack_a);
-		}
-		i++;
-	}
-}
-void	move_max_to_top(t_list **stack_b, int max_index)
+void radix(t_list **a, t_list **b, int size)
 {
-	int	pos;
-	int	size;
+	int bit;
+	int i;
+	int max_bits;
+	int max_index;
 
-	size = ft_stack_size(*stack_b);
-	pos = find_position(*stack_b, max_index);
-	while ((*stack_b)->index != max_index)
+	bit = 0;
+	max_bits = 0;
+	max_index = size - 1;
+	while ((max_index >> max_bits) != 0)
+		max_bits++;
+	while (bit < max_bits)
 	{
-		if (pos < size / 2)
-			ft_rotate_b(stack_b);
-		else
-			ft_rev_rotate_b(stack_b);
+		i = 0;
+		while (i++ < size)
+		{
+			if (((*a)->index >> bit) & 1)
+				ft_rotate_a(a);
+			else
+				ft_push_b(a, b);
+		}
+		while (*b)
+			ft_push_a(a, b);
+		bit++;
 	}
 }
 
-void	merge_stacks(t_list **stack_a, t_list **stack_b)
-{
-	int	max_index;
 
-	while (*stack_b)
-	{
-		max_index = find_max_index(*stack_b);
-		move_max_to_top(stack_b, max_index);
-		ft_push_a(stack_a, stack_b);
-	}
-}
-void	partition_and_move(t_list **stack_a, t_list **stack_b)
-{
-	int	pivot1;
-	int	pivot2;
-	int	size;
 
-	size = ft_stack_size(*stack_a);
-	pivot1 = find_pivot1(*stack_a, size);
-	pivot2 = find_pivot2(*stack_a, size);
-	move_to_b_optimized(stack_a, stack_b, pivot1, pivot2);
-}

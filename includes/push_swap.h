@@ -36,27 +36,20 @@ void				handle_error(t_list *stack, char *msg, int code);
 t_list				*new_node(int value);
 int					ft_stack_size(t_list *stack);
 void				add_to_stack(t_list **stack, int value);
+void				print_stack(t_list *stack, char *name);
+void 				index_stack(t_list *stack);
 
 // algorithm functions
+void				ft_two_sort(t_list **stack);
 int					ft_sort_five(t_list **stack_a, t_list **stack_b);
-int					find_max_index(t_list *stack);
-int					find_max_index(t_list *stack);
-int					find_pivot1(t_list *stack, int size);
-int					find_pivot2(t_list *stack, int size);
-int					*stack_to_array(t_list *stack, int size);
-void				quick_sort(int *arr, int low, int high);
-int					partition(int *arr, int low, int high);
-void				partition_and_move(t_list **stack_a, t_list **stack_b);
-int					find_position(t_list *stack, int index);
-void				merge_stacks(t_list **stack_a, t_list **stack_b);
-int					get_node_position(t_list **stack, t_list *node);
-void				send_min_to_b(t_list **stack_a, t_list **stack_b);
 int					ft_sort_four(t_list **stack_a, t_list **stack_b);
+int					ft_three_sort_algo(t_list **stack);
+void 				radix(t_list **a, t_list **b, int size);
 
 // parce functions
 t_list				*parse_arguments(int argc, char **argv);
 
-// main functions
+// push function
 void				push_swap(t_list **stack_a, t_list **stack_b);
 
 // basic operations

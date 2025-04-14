@@ -13,29 +13,6 @@
 
 #include "../../../includes/push_swap.h"
 
-int	find_pivot1(t_list *stack, int size)
-{
-	int	*arr;
-	int	pivot;
-
-	arr = stack_to_array(stack, size);
-	quick_sort(arr, 0, size - 1);
-	pivot = arr[size / 3];
-	free(arr);
-	return (pivot);
-}
-int	find_pivot2(t_list *stack, int size)
-{
-	int	*arr;
-	int	pivot;
-
-	arr = stack_to_array(stack, size);
-	quick_sort(arr, 0, size - 1);
-	pivot = arr[(2 * size) / 3];
-	free(arr);
-	return (pivot);
-}
-
 int	*stack_to_array(t_list *stack, int size)
 {
 	int	*arr;
@@ -52,39 +29,28 @@ int	*stack_to_array(t_list *stack, int size)
 	}
 	return (arr);
 }
-void	quick_sort(int *arr, int low, int high)
-{
-	int	pivot;
-	
-	if (low < high)
-	{
-		pivot = partition(arr, low, high);
-		quick_sort(arr, low, pivot - 1);
-		quick_sort(arr, pivot + 1, high);
-	}
-}
 
-int	partition(int *arr, int low, int high)
+void index_stack(t_list *stack)
 {
-	int	pivot;
-	int	i;
-	int	j;
-	int	temp;
+	t_list *current;
+	t_list *compare;
+	int index;
 
-	pivot = arr[high];
-	i = (low - 1);
-	for (j = low; j < high; j++)
+	current = stack;
+	while (current)
 	{
-		if (arr[j] <= pivot)
+		index = 0;
+		compare = stack;
+		while (compare)
 		{
-			i++;
-			temp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = temp;
+			if (compare->number < current->number)
+				index++;
+			compare = compare->next_node;
 		}
+		current->index = index;
+		current = current->next_node;
 	}
-	temp = arr[i + 1];
-	arr[i + 1] = arr[high];
-	arr[high] = temp;
-	return (i + 1);
 }
+
+
+

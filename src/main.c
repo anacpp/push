@@ -27,22 +27,14 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-
+	
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2)
-		return (0);
+		handle_error(NULL, NULL, 0);
 	stack_a = parse_arguments(argc, argv);
-	if (!stack_a)
-		return (write(2, "Error\n", 6), 1); 
-	if (is_sorted(&stack_a))
-	{
-		free_stack(stack_a);
-		return (0);
-	}
+	index_stack(stack_a);
 	push_swap(&stack_a, &stack_b);
-	print_stack(stack_a, "A");
-	print_stack(stack_b, "B");
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

@@ -54,7 +54,7 @@ static int	convert_to_int(char *str, int *num)
 
 	val = ft_atoi(str);
 	if (val < INT_MIN || val > INT_MAX)
-		return (0);
+		handle_error(NULL, "Error : number over the limits.\n", 1);	
 	*num = (int)val;
 	return (1);
 }
