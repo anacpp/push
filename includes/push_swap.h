@@ -37,6 +37,8 @@ t_list				*new_node(int value);
 int					ft_stack_size(t_list *stack);
 void				add_to_stack(t_list **stack, int value);
 void 				index_stack(t_list *stack);
+int	find_position(t_list *stack, int index);
+int	find_max_index(t_list *stack);
 
 // algorithm functions
 void				ft_two_sort(t_list **stack);
@@ -48,6 +50,7 @@ void				push_chunks(t_list **a, t_list **b, int size, int chunks);
 
 // parce functions
 t_list				*parse_arguments(int argc, char **argv);
+long	ft_atol(const char *str);
 
 // push function
 void				push_swap(t_list **stack_a, t_list **stack_b);

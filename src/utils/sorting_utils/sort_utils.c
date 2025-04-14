@@ -35,5 +35,28 @@ void index_stack(t_list *stack)
 	}
 }
 
+int	find_max_index(t_list *stack)
+{
+	int max = stack->index;
+	while (stack)
+	{
+		if (stack->index > max)
+			max = stack->index;
+		stack = stack->next_node;
+	}
+	return max;
+}
 
+int	find_position(t_list *stack, int index)
+{
+	int pos = 0;
+	while (stack)
+	{
+		if (stack->index == index)
+			break;
+		pos++;
+		stack = stack->next_node;
+	}
+	return pos;
+}
 

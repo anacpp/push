@@ -12,54 +12,31 @@
 
 #include "../../includes/push_swap.h"
 
-static int	find_max_index(t_list *stack)
+static void	push_chunk_elements(t_list **a, t_list **b, int chunk_min, int chunk_max)
 {
-	int max = stack->index;
-	while (stack)
-	{
-		if (stack->index > max)
-			max = stack->index;
-		stack = stack->next_node;
-	}
-	return max;
-}
+	int	count;
+	int	i;
+	int	idx;
+	int	chunk_size;
 
-static int	find_position(t_list *stack, int index)
-{
-	int pos = 0;
-	while (stack)
-	{
-		if (stack->index == index)
-			break;
-		pos++;
-		stack = stack->next_node;
-	}
-	return pos;
-}
-
-static void push_chunk_elements(t_list **a, t_list **b, int chunk_min, int chunk_max, int chunk_size)
-{
-    int count; 
-    int i;
-	int idx; 
-
+	chunk_size = chunk_max - chunk_min;
 	count = ft_stack_size(*a);
 	i = 0;
-    while (i < count)
-    {
-        idx = (*a)->index;
-
-        if (idx >= chunk_min && idx < chunk_max)
-        {
-            ft_push_b(a, b);
-            if (idx < chunk_min + (chunk_size / 2))
-                ft_rotate_b(b);
-        }
-        else
+	while (i < count)
+	{
+		idx = (*a)->index;
+		if (idx >= chunk_min && idx < chunk_max)
+		{
+			ft_push_b(a, b);
+			if (idx < chunk_min + (chunk_size / 2))
+				ft_rotate_b(b);
+		}
+		else
 			ft_rotate_a(a);
-        i++;
-    }
+		i++;
+	}
 }
+
 
 void push_chunks(t_list **a, t_list **b, int size, int chunks)
 {
@@ -74,7 +51,7 @@ void push_chunks(t_list **a, t_list **b, int size, int chunks)
     {
         chunk_min = current * chunk_size;
         chunk_max = (current + 1) * chunk_size;
-        push_chunk_elements(a, b, chunk_min, chunk_max, chunk_size);
+        push_chunk_elements(a, b, chunk_min, chunk_max);
         current++;
     }
 }

@@ -52,9 +52,9 @@ static int	convert_to_int(char *str, int *num)
 {
 	long	val;
 
-	val = ft_atoi(str);
+	val = ft_atol(str);
 	if (val < INT_MIN || val > INT_MAX)
-		handle_error(NULL, "Error : number over the limits.\n", 1);	
+		return (0);
 	*num = (int)val;
 	return (1);
 }
@@ -73,7 +73,7 @@ static void	process_arg(char *arg, t_list **stack)
 		if (!is_number(split_args[j]) || !convert_to_int(split_args[j], &num))
 		{
 			free_split(split_args);
-			handle_error(*stack, "Invalid input\n", 1);
+			handle_error(*stack, "", 1);
 		}
 		add_to_stack(stack, num);
 		j++;
@@ -91,6 +91,6 @@ t_list	*parse_arguments(int argc, char **argv)
 	while (i < argc)
 		process_arg(argv[i++], &stack);
 	if (has_duplicates(stack))
-		handle_error(stack, "Error : Duplicated numbers.\n", 1);
+		handle_error(stack, "", 1);
 	return (stack);
 }
