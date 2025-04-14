@@ -49,3 +49,23 @@ long	ft_atol(const char *str)
 	}
 	return (result * sign);
 }
+
+int	has_valid_numbers(char **argv)
+{
+	int	i = 1;
+	int	j;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if ((argv[i][j] >= '0' && argv[i][j] <= '9') ||
+				argv[i][j] == '-' || argv[i][j] == '+')
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+

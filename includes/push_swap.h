@@ -51,6 +51,7 @@ void				push_chunks(t_list **a, t_list **b, int size, int chunks);
 // parce functions
 t_list				*parse_arguments(int argc, char **argv);
 long	ft_atol(const char *str);
+int	has_valid_numbers(char **argv);
 
 // push function
 void				push_swap(t_list **stack_a, t_list **stack_b);
@@ -70,9 +71,5 @@ int					ft_rev_rotate_ab(t_list **stack_a, t_list **stack_b);
 void				ft_two_sort(t_list **stack);
 int					ft_sort_five(t_list **stack_a, t_list **stack_b);
 int					ft_three_sort_algo(t_list **stack);
-
-
-
-void print_stack(t_list *stack, char *name);
 
 #endif
