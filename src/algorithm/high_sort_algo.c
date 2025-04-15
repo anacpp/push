@@ -6,13 +6,14 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 12:00:00 by user              #+#    #+#             */
-/*   Updated: 2025/04/11 16:56:22 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:49:21 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void	push_chunk_elements(t_list **a, t_list **b, int chunk_min, int chunk_max)
+static void	push_chunk_elements(t_list **a, t_list **b, int chunk_min,
+		int chunk_max)
 {
 	int	count;
 	int	i;
@@ -37,32 +38,31 @@ static void	push_chunk_elements(t_list **a, t_list **b, int chunk_min, int chunk
 	}
 }
 
-
-void push_chunks(t_list **a, t_list **b, int size, int chunks)
+void	push_chunks(t_list **a, t_list **b, int size, int chunks)
 {
-    int chunk_size; 
-    int current;
-	int chunk_min;
-	int chunk_max;
+	int	chunk_size;
+	int	current;
+	int	chunk_min;
+	int	chunk_max;
 
 	chunk_size = size / chunks;
 	current = 0;
-    while (current < chunks)
-    {
-        chunk_min = current * chunk_size;
-        chunk_max = (current + 1) * chunk_size;
-        push_chunk_elements(a, b, chunk_min, chunk_max);
-        current++;
-    }
+	while (current < chunks)
+	{
+		chunk_min = current * chunk_size;
+		chunk_max = (current + 1) * chunk_size;
+		push_chunk_elements(a, b, chunk_min, chunk_max);
+		current++;
+	}
 }
 
 void	return_chunks(t_list **a, t_list **b)
 {
+	int	max;
+	int	pos;
+
 	while (*b)
 	{
-		int max;
-		int pos;
-
 		max = find_max_index(*b);
 		pos = find_position(*b, max);
 		if (pos <= ft_stack_size(*b) / 2)

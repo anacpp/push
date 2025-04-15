@@ -6,7 +6,7 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:54:26 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/04/03 16:29:12 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:48:40 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static int	is_number(const char *str)
 	}
 	return (1);
 }
+
 static int	has_duplicates(t_list *stack)
 {
 	t_list	*outer;
@@ -48,6 +49,7 @@ static int	has_duplicates(t_list *stack)
 	}
 	return (0);
 }
+
 static int	convert_to_int(char *str, int *num)
 {
 	long	val;
@@ -58,6 +60,7 @@ static int	convert_to_int(char *str, int *num)
 	*num = (int)val;
 	return (1);
 }
+
 static void	process_arg(char *arg, t_list **stack)
 {
 	char	**split_args;

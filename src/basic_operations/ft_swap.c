@@ -6,7 +6,7 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:54:26 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/04/03 16:31:19 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:44:05 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,28 @@ static void	swap_node(t_list **stack)
 int	ft_swap_a(t_list **stack_a)
 {
 	if (*stack_a == NULL || count_nodes(*stack_a) < 2)
-		return 0;
+		return (0);
 	swap_node(stack_a);
 	write(1, "sa\n", 3);
-	return 1;
+	return (1);
 }
 
 int	ft_swap_b(t_list **stack_b)
 {
 	if (*stack_b == NULL || count_nodes(*stack_b) < 2)
-		return 0;
+		return (0);
 	swap_node(stack_b);
 	write(1, "sb\n", 3);
-	return 1;
+	return (1);
 }
 
 int	ft_swap_ab(t_list **stack_a, t_list **stack_b)
 {
-	if (*stack_a == NULL || *stack_b == NULL || count_nodes(*stack_a) < 2 || count_nodes(*stack_b) < 2)
-		return 0; 
+	if (*stack_a == NULL || *stack_b == NULL || count_nodes(*stack_a) < 2
+		|| count_nodes(*stack_b) < 2)
+		return (0);
 	swap_node(stack_a);
 	swap_node(stack_b);
 	write(1, "ss\n", 3);
-	return 2;
+	return (2);
 }

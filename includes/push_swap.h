@@ -6,7 +6,7 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:54:26 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/04/11 19:15:18 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:43:22 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void				handle_error(t_list *stack, char *msg, int code);
 t_list				*new_node(int value);
 int					ft_stack_size(t_list *stack);
 void				add_to_stack(t_list **stack, int value);
-void 				index_stack(t_list *stack);
-int	find_position(t_list *stack, int index);
-int	find_max_index(t_list *stack);
+void				index_stack(t_list *stack);
+int					find_position(t_list *stack, int index);
+int					find_max_index(t_list *stack);
 
 // algorithm functions
 void				ft_two_sort(t_list **stack);
@@ -50,8 +50,8 @@ void				push_chunks(t_list **a, t_list **b, int size, int chunks);
 
 // parce functions
 t_list				*parse_arguments(int argc, char **argv);
-long	ft_atol(const char *str);
-int	has_valid_numbers(char **argv);
+long				ft_atol(const char *str);
+int					has_valid_numbers(char **argv);
 
 // push function
 void				push_swap(t_list **stack_a, t_list **stack_b);

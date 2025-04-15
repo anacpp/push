@@ -6,7 +6,7 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 16:55:33 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/04/11 19:14:48 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:44:41 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	
+
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2)

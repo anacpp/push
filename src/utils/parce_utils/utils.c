@@ -6,7 +6,7 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:54:26 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/04/03 16:29:33 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:44:15 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,17 @@ long	ft_atol(const char *str)
 
 int	has_valid_numbers(char **argv)
 {
-	int	i = 1;
+	int	i;
 	int	j;
+
+	i = 1;
 	while (argv[i])
 	{
 		j = 0;
 		while (argv[i][j])
 		{
-			if ((argv[i][j] >= '0' && argv[i][j] <= '9') ||
-				argv[i][j] == '-' || argv[i][j] == '+')
+			if ((argv[i][j] >= '0' && argv[i][j] <= '9') || argv[i][j] == '-'
+				|| argv[i][j] == '+')
 				return (1);
 			j++;
 		}
@@ -68,4 +70,3 @@ int	has_valid_numbers(char **argv)
 	}
 	return (0);
 }
-

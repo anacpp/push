@@ -6,7 +6,7 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:13:19 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/02/06 18:41:18 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:51:22 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	ft_strlcpy(join + ft_strlen(s1), s2, ft_strlen(s2) + 1);
 	join[ft_strlen(s1) + ft_strlen(s2)] = '\0';
 	if (s1 != NULL)
-	free(s1);
+		free(s1);
 	free(s2);
 	return (join);
 }
