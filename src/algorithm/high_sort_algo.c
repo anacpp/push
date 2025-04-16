@@ -6,7 +6,7 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 12:00:00 by user              #+#    #+#             */
-/*   Updated: 2025/04/15 15:49:21 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/16 19:02:29 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ void	push_chunks(t_list **a, t_list **b, int size, int chunks)
 	int	chunk_min;
 	int	chunk_max;
 
-	chunk_size = size / chunks;
+	if (size % chunks != 0)
+		chunk_size = (size / chunks) + 1;
+	else
+		chunk_size = size / chunks;
 	current = 0;
 	while (current < chunks)
 	{

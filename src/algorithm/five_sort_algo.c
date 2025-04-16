@@ -6,7 +6,7 @@
 /*   By: acesar-p <acesar-p@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:54:26 by acesar-p          #+#    #+#             */
-/*   Updated: 2025/04/11 19:14:07 by acesar-p         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:55:36 by acesar-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	get_node_position(t_list **stack, t_list *node)
 	return (-1);
 }
 
-void	send_min_to_b(t_list **stack_a, t_list **stack_b)
+static void	send_min_to_b(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*smallest_node;
 	int		pos;
