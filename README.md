@@ -31,34 +31,39 @@ O projeto implementa uma estratégia adaptativa:
 
 ---
 
-## 📦 Estrutura Geral
+## 📁 Estrutura do Projeto
 
+```bash
 push_swap/
-├── README.md
-├── Makefile
-├── includes/
-│ └── push_swap.h
-├── libft/
-│ └── [sua biblioteca personalizada]
-├── src/
-│ ├── main.c
-│ ├── push_swap.c
-│ ├── algorithm/
-│ │ ├── two_algo.c
-│ │ ├── three_sort_algo.c
-│ │ ├── five_sort_algo.c
-│ │ └── high_sort_algo.c
-│ ├── basic_operations/
-│ │ ├── ft_push_a_b.c
-│ │ ├── ft_rotate.c
-│ │ ├── ft_reverse_rotate.c
-│ │ └── ft_swap.c
-│ ├── parse_functions/
-│ │ └── parse_func.c
-│ └── utils/
-│ ├── general_utils.c
-│ ├── parse_utils/
-│ └── sorting_utils/
+├── README.md               # Documentação do projeto
+├── Makefile                # Compilação automatizada
+├── includes/               # Arquivos de cabeçalho
+│   └── push_swap.h
+├── libft/                  # Biblioteca libft pessoal (reutilizada)
+│   └── *.c / *.h
+├── src/                    # Código-fonte principal
+│   ├── main.c              # Entrada principal
+│   ├── push_swap.c         # Lógica principal de controle
+│
+│   ├── algorithm/          # Estratégias de ordenação
+│   │   ├── two_algo.c
+│   │   ├── three_sort_algo.c
+│   │   ├── five_sort_algo.c
+│   │   └── high_sort_algo.c
+│
+│   ├── basic_operations/   # Operações permitidas no projeto
+│   │   ├── ft_push_a_b.c
+│   │   ├── ft_rotate.c
+│   │   ├── ft_reverse_rotate.c
+│   │   └── ft_swap.c
+│
+│   ├── parse_functions/    # Validação e parsing de argumentos
+│   │   └── parse_func.c
+│
+│   └── utils/              # Funções auxiliares
+│       ├── general_utils.c
+│       ├── parse_utils/
+│       └── sorting_utils/
 
 
 ---
@@ -100,3 +105,21 @@ Pasta: `utils/`
 ```bash
 make
 
+---
+
+## 🧪 Como Testar o Projeto
+
+Aqui estão alguns comandos úteis para testar a execução e a eficiência do `push_swap`:
+
+---
+
+### ✅ 1. Verificar se a saída ordena corretamente (com checker)
+
+Se você tiver o `checker` da 42 (projeto `checker` compilado):
+
+```bash
+ARG="3 2 1"; ./push_swap $ARG | ./checker $ARG
+# Esperado: OK
+
+ARG=$(shuf -i 1-100 -n 100 | tr '\n' ' ')
+./push_swap $ARG | wc -l
