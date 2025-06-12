@@ -113,7 +113,7 @@ Aqui estão alguns comandos úteis para testar a execução e a eficiência do `
 
 ---
 
-### ✅ 1. Verificar se a saída ordena corretamente (com checker)
+###  Verificar se a saída ordena corretamente (com checker)
 
 Se você tiver o `checker` da 42 (projeto `checker` compilado):
 
@@ -122,7 +122,8 @@ ARG="3 2 1"; ./push_swap $ARG | ./checker $ARG
 # Esperado: OK
 ```
 
+Com uso do `shuf` para teste com número de argumentos maiores organizadas de forma aleatória (ex abaixo : numeros de 1 à 100)
 ```b̀ash
 ARG=$(shuf -i 1-100 -n 100 | tr '\n' ' ')
-./push_swap $ARG | wc -l
+./push_swap $ARG | ./checker $ARG
 ```
