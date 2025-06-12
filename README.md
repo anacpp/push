@@ -65,7 +65,7 @@ push_swap/
 │       ├── parse_utils/
 │       └── sorting_utils/
 
-
+```
 ---
 
 ## 🧠 Lógica de Implementação
@@ -104,7 +104,7 @@ Pasta: `utils/`
 
 ```bash
 make
-
+```
 ---
 
 ## 🧪 Como Testar o Projeto
@@ -120,6 +120,9 @@ Se você tiver o `checker` da 42 (projeto `checker` compilado):
 ```bash
 ARG="3 2 1"; ./push_swap $ARG | ./checker $ARG
 # Esperado: OK
+```
 
+```b̀ash
 ARG=$(shuf -i 1-100 -n 100 | tr '\n' ' ')
 ./push_swap $ARG | wc -l
+```
