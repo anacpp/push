@@ -122,7 +122,7 @@ ARG="3 2 1"; ./push_swap $ARG | ./checker $ARG
 # Esperado: OK
 ```
 
-Com uso do `shuf` para teste com número de argumentos maiores organizadas de forma aleatória (ex abaixo : numeros de 1 à 100)
+Com uso do `shuf` para teste com número de argumentos maiores organizados de forma aleatória (ex abaixo : numeros de 1 à 100)
 ```b̀ash
 ARG=$(shuf -i 1-100 -n 100 | tr '\n' ' ')
 ./push_swap $ARG | ./checker $ARG
